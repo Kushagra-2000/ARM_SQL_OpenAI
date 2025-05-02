@@ -95,21 +95,7 @@
         "capacity": 2
       },
   "kind": "v12.0,user,vcore,serverless,freelimit",
-  "properties": {
-        "collation": "SQL_Latin1_General_CP1_CI_AS",
-        "maxSizeBytes": 34359738368,
-        "catalogCollation": "SQL_Latin1_General_CP1_CI_AS",
-        "zoneRedundant": false,
-        "readScale": "Disabled",
-        "autoPauseDelay": 60,
-        "requestedBackupStorageRedundancy": "Local",
-        "minCapacity": 0.5,
-        "isLedgerOn": false,
-        "useFreeLimit": true,
-        "freeLimitExhaustionBehavior": "AutoPause",
-        "availabilityZone": "NoPreference"
-    },
-      "dependsOn": [
+  "dependsOn": [
         "[resourceId('Microsoft.Sql/servers', parameters('serverName'))]"
       ]
     }
