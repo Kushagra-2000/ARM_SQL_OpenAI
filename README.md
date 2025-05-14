@@ -1,36 +1,61 @@
 # Azure Resource Deployment for Retrieval-Augmented Generation (RAG)
 
-This repository contains an ARM template (RAG_deployment.json) to deploy all the required resources for the Retrieval-Augmented Generation (RAG) project. The template includes the deployment of Azure SQL Database, Azure OpenAI resources, and models from AI Foundry.  
+This repository provides ARM templates to deploy all required Azure resources for building Retrieval-Augmented Generation (RAG) pipelines. It supports both structured and unstructured data scenarios and is designed to simplify user onboarding when creating GenAI applications. The template includes the deployment of Azure SQL Database, Azure Document Intelligence resource, Azure OpenAI resources, and models from AI Foundry.  
 
 ## Prerequisites
 Before deploying the template, ensure you have the following:
 
-- An active Azure for Student subscription
+- An active **Azure for Students** subscription
 - Permissions to create resources in the selected resource group
 - Sufficient quota for Azure OpenAI resources 
 
 
 ## Deploy to Azure
-### One click Azure deployment via Azure portal UI
-Click the button below to deploy the components for RAG pipeline template to your Azure for student subscription:  
+
+### 🔹 RAG for Structured Data
+
+Use this template if your data is stored in structured formats such as .csv file.
 
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FKushagra-2000%2FARM_SQL_OpenAI%2Frefs%2Fheads%2Fmain%2FRAG_deployment.json)
+
+---
+
+### 🔸 RAG for Unstructured Documents
+
+Use this template if your data consists of PDFs, scanned documents, or other unstructured formats.
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FKushagra-2000%2FARM_SQL_OpenAI%2Frefs%2Fheads%2Fmain%2FRAG_unstructured_deployment.json)
+
+---
 
 ### Parameters Description
 | Parameter Name  | Description | Example |
 | :---------------: | :------------- | :-------: |
-| serverName  | The name of the SQL server to host SQL Database.  | Sample-SQL-server
-| sqlDBName  | The name of the SQL Database.  | Sample-SQL-Database
-| location  | Location for SQL resources. Recommended to keep location same as default value.  | eastus2
-|administratorLogin | The administrator username of the SQL server for SQL authentication.  |   |
-| administratorLoginPassword  | The administrator password of the SQL server for SQL authentication. |  |   
-| OpenAI_account_name  | The name of Azure OpenAI resource.  | Sample-OpenAI-resource
-| OpenAI_account_location  | The location of Azure OpenAI resource. Recommended to keep location same as default value.  | eastus2
-| OpenAI_chat_completion_model  | The name of recommended Azure OpenAI chat completion model. | gpt-4.1
-| embedding_model	  | The name of recommended Azure OpenAI embedding model.  | text-embedding-3-small
+| `serverName`  | Name of the Azure SQL Server (logical server) to host your database. | Sample-SQL-server
+| `sqlDBName`  | Name of the SQL database to be created.  | Sample-SQL-Database
+| `location`  | Azure region for all resources. Recommended to keep the default.  | eastus2
+|`administratorLogin` | The administrator username of the SQL server for SQL authentication.  |   |
+| `administratorLoginPassword`  | The administrator password of the SQL server for SQL authentication. |  |   
+| `OpenAI_account_name`  | Name of the Azure OpenAI resource.  | Sample-OpenAI-resource
+| `OpenAI_account_location`  | Region for the Azure OpenAI resource  | eastus2
+| `OpenAI_chat_completion_model`  | Chat model to deploy. | gpt-4.1
+| `embedding_model`	  | Embedding model for vector search.  | text-embedding-3-small
+| `Document_Intelligence_account_name` | Name of the Azure Document Intelligence (Form Recognizer) resource. | sample-doc-intel          
 
 ## Firewall Configuration
-**Note:** After the deployment is completed successfully, you need to configure the firewall settings for the SQL server separately to allow access from your client IP addresses.
+**Note:** After the deployment is completed successfully, you need to configure the firewall settings for the **SQL server** separately to allow access from your client IP addresses.
+
+1. Go to the deployed SQL Server in the Azure Portal.
+2. Navigate to **Security > Networking > Virtual networks**.
+3. Add your client IP and click Save.
+
+## Clean Up Resources
+When you're finished using these resources, or if you want to start over again with a new free database (limit 10 per subscription), you can delete the resource group you created, which deletes all the resources within it.
+
+To delete `myResourceGroup` and all its resources using the Azure portal:
+
+1. In the Azure portal, search for and select Resource groups, and then select `myResourceGroup` from the list.
+2. On the Resource group page, select Delete resource group.
+3. Under Type the resource group name, enter `myResourceGroup`, and then select Delete.
 
 ## Troubleshooting
 If you encounter any issues during deployment, check the following:
