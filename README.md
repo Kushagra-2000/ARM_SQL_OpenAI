@@ -15,7 +15,6 @@ Before deploying the template, ensure you have the following:
 ### 🔹 RAG for Structured Data
 
 Use this template if your data is stored in structured formats such as .csv file.
-
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FKushagra-2000%2FARM_SQL_OpenAI%2Frefs%2Fheads%2Fmain%2FRAG_deployment.json)
 
 ---
