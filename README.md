@@ -14,17 +14,15 @@ Before deploying the template, ensure you have the following:
 
 ### 🔹 RAG for Structured Data
 
-Use this template if your data is stored in structured formats such as .csv file.
+Use this template if your data is stored in structured formats such as .csv file.  
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FKushagra-2000%2FARM_SQL_OpenAI%2Frefs%2Fheads%2Fmain%2FRAG_deployment.json)
 
 ---
 
 ### 🔸 RAG for Unstructured Documents
 
-Use this template if your data consists of PDFs, scanned documents, or other unstructured formats.
+Use this template if your data consists of PDFs, scanned documents, or other unstructured formats.  
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FKushagra-2000%2FARM_SQL_OpenAI%2Frefs%2Fheads%2Fmain%2FRAG_unstructured_deployment.json)
-
----
 
 ### Parameters Description
 | Parameter Name  | Description | Example |
@@ -62,3 +60,10 @@ If you encounter any issues during deployment, check the following:
 - Ensure you have sufficient quota for Azure OpenAI resources.
 - Verify that all parameters are correctly specified.
 - Check the deployment logs in the Azure Portal for detailed error messages.
+
+## Resources
+For guidelines and information on any specific resource, check out the following microsoft documentation:
+
+- 📄 [Deploy Azure SQL Database for free](https://learn.microsoft.com/en-us/azure/azure-sql/database/free-offer?view=azuresql)
+- 📄 [Create a Document Intelligence resource](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/how-to-guides/create-document-intelligence-resource?view=doc-intel-4.0.0#get-endpoint-url-and-keys)
+- 📄 [Create and deploy an Azure OpenAI Service resource](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal)
