@@ -6,7 +6,7 @@
             "defaultValue": "Sample-SQL-server",
             "type": "String",
             "metadata": {
-                "description": "The name of the SQL server to host SQL Database."
+                "description": "The name of the SQL server that will host the SQL Database."
             }
         },
         "sqlDBName": {
@@ -48,46 +48,46 @@
             ],
             "type": "String",
             "metadata": {
-                "description": "Location for SQL resources. Recommended to keep location same as default value."
+                "description": "Location for SQL resources. Recommended to keep location same as default value to ensure compatibility and lower latency."
             }
         },
         "administratorLogin": {
             "type": "String",
             "metadata": {
-                "description": "The administrator username of the SQL server for SQL authentication."
+                "description": "Username for the SQL Server admin account. You'll use this to log in and manage the database"
             }
         },
         "administratorLoginPassword": {
             "type": "SecureString",
             "metadata": {
-                "description": "The administrator password of the SQL server for SQL authentication."
+                "description": "Secure password for the SQL Server admin account."
             }
         },
         "OpenAI_account_name": {
             "type": "String",
             "metadata": {
-                "description": "The name of Azure OpenAI resource."
+                "description": "Name of the Azure OpenAI resource used for deploying language models like GPT."
             }
         },
         "OpenAI_account_location": {
             "defaultValue": "eastus2",
             "type": "String",
             "metadata": {
-                "description": "The location of Azure OpenAI resource. Recommended to keep location same as default value"
+                "description": "Azure region where the OpenAI resource will be deployed. Keeping it as default ensures model availability."
             }
         },
         "OpenAI_chat_completion_model": {
             "defaultValue": "gpt-4.1",
             "type": "String",
             "metadata": {
-                "description": "The name of recommended Azure OpenAI chat completion model."
+                "description": "Name of the Azure OpenAI chat model to be deployed for generating conversational responses. Recommended to keep same as default value."
             }
         },
         "embedding_model": {
             "defaultValue": "text-embedding-3-small",
             "type": "String",
             "metadata": {
-                "description": "The name of recommended Azure OpenAI embedding model."
+                "description": "Name of the Azure OpenAI chat model to be deployed for generating conversational responses. Recommended to keep same as default value."
             }
         }
     },
@@ -102,6 +102,7 @@
             },
             "kind": "OpenAI",
             "properties": {
+                "customSubDomainName": "[parameters('OpenAI_account_name')]",
                 "networkAcls": {
                     "defaultAction": "Allow",
                     "virtualNetworkRules": [],
@@ -179,7 +180,11 @@
                 "family": "Gen5",
                 "capacity": 2
             },
-            "kind": "v12.0,user,vcore,serverless,freelimit"
+            "kind": "v12.0,user,vcore,serverless,freelimit",
+            "properties": {
+                "useFreeLimit": "true",
+                "freeLimitExhaustionBehavior": "AutoPause"
+            }
         }
     ]
 }
