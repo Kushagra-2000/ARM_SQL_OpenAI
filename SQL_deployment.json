@@ -95,6 +95,10 @@
         "capacity": 2
       },
   "kind": "v12.0,user,vcore,serverless,freelimit",
+  "properties": {
+        "useFreeLimit": "true",
+        "freeLimitExhaustionBehavior": "AutoPause"
+      },
   "dependsOn": [
         "[resourceId('Microsoft.Sql/servers', parameters('serverName'))]"
       ]
