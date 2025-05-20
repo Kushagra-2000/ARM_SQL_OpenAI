@@ -3,14 +3,14 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "serverName": {
-            "defaultValue": "Sample-SQL-server",
+            "defaultValue": "Sample-SQL-server-<yourname>",
             "type": "String",
             "metadata": {
                 "description": "The name of the SQL server that will host the SQL Database."
             }
         },
         "sqlDBName": {
-            "defaultValue": "Sample-SQL-Database",
+            "defaultValue": "Sample-SQL-Database-<yourname>",
             "type": "String",
             "metadata": {
                 "description": "The name of the SQL Database."
@@ -64,6 +64,7 @@
             }
         },
         "OpenAI_account_name": {
+            "defaultValue": "Sample-OpenAI-<yourname>",
             "type": "String",
             "metadata": {
                 "description": "Name of the Azure OpenAI resource used for deploying language models like GPT."
