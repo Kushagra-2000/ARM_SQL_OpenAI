@@ -38,7 +38,8 @@ Use this template if your data consists of PDFs, scanned documents, or other uns
 | `embedding_model`	  | Embedding model for vector search.  | text-embedding-3-small
 | `Document_Intelligence_account_name` | Name of the Azure Document Intelligence (Form Recognizer) resource. | sample-doc-intel          
   
-⚠️ Note: This is a demo deployment. `The default server name (sample-sqlserver) may already exist in your region`, which can cause deployment errors. To avoid this, please customize the server name by appending your name or initials. If you encounter an error, simply redeploy with a unique resource name.  
+⚠️ Note: This is a demo deployment. `The default server name (sample-sqlserver) may already exist in your region`, which can cause deployment errors. To avoid this, please customize the server (or resource) name by appending your name or initials.   
+If you encounter an error, simply re-deploy with a unique resource name.  
 
 ## Firewall Configuration
 **Note:** After the deployment is completed successfully, you need to configure the firewall settings for the **SQL server** separately to allow access from your client IP addresses.
