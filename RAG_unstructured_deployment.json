@@ -3,14 +3,14 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "serverName": {
-            "defaultValue": "Sample-SQL-server",
+            "defaultValue": "Sample-SQL-Server-<yourname>",
             "type": "String",
             "metadata": {
                 "description": "The name of the SQL server that will host the SQL Database."
             }
         },
         "sqlDBName": {
-            "defaultValue": "Sample-SQL-Database",
+            "defaultValue": "Sample-SQL-Database-<yourname>",
             "type": "String",
             "metadata": {
                 "description": "The name of the SQL Database."
@@ -64,14 +64,14 @@
             }
         },
         "Document_Intelligence_account_name": {
-		  "defaultValue": "sample-doc-intel",
+		  "defaultValue": "Sample-Doc-Intel-<yourname>",
             "type": "String",
             "metadata": {
                 "description": "Name of the Azure AI Document Intelligence (Form Recognizer) resource used for extracting structured data from documents."
             }
         },
         "OpenAI_account_name": {
-		  "defaultValue": "sample-openai",
+		  "defaultValue": "Sample-OpenAI-<yourname>",
             "type": "String",
             "metadata": {
                 "description": "Name of the Azure OpenAI resource used for deploying language models like GPT."
