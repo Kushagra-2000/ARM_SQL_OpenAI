@@ -124,7 +124,8 @@
             "apiVersion": "2024-10-01",
             "name": "[concat(parameters('OpenAI_account_name'), '/', parameters('OpenAI_chat_completion_model'))]",
             "dependsOn": [
-                "[resourceId('Microsoft.CognitiveServices/accounts', parameters('OpenAI_account_name'))]"
+                "[resourceId('Microsoft.CognitiveServices/accounts', parameters('OpenAI_account_name'))]",
+				"[resourceId('Microsoft.CognitiveServices/accounts/deployments', parameters('OpenAI_account_name'), parameters('OpenAI_chat_completion_model'))]"
             ],
             "sku": {
                 "name": "GlobalStandard",
@@ -219,6 +220,7 @@
         }
     ]
 }
+
 
 
 
