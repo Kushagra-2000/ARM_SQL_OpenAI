@@ -35,7 +35,7 @@ Use this template if your data consists of PDFs, scanned documents, or other uns
 | `OpenAI_account_name`  | Name of the Azure OpenAI resource.  | Sample-OpenAI-resource
 | `OpenAI_account_location`  | Region for the Azure OpenAI resource  | eastus2
 | `OpenAI_chat_completion_model`  | Chat model to deploy. | gpt-4.1
-| `embedding_model`	  | Embedding model for vector search.  | text-embedding-3-small
+| `embedding_model`	  | Embedding model for vector search.  | text-embedding-ada-002 or text-embedding-3-small
 | `Document_Intelligence_account_name` | Name of the Azure Document Intelligence (Form Recognizer) resource. | sample-doc-intel          
   
 ⚠️ Note: This is a demo deployment. `The default server name (sample-sqlserver) may already exist in your region`, which can cause deployment errors. To avoid this, please customize the server (or resource) name by appending your name or initials.   
