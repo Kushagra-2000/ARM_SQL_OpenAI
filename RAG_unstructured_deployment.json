@@ -155,7 +155,7 @@
             "properties": {
                 "model": {
                     "format": "OpenAI",
-                    "name": "text-embedding-3-small",
+                    "name": "text-embedding-ada-002",
                     "version": "1"
                 },
                 "versionUpgradeOption": "NoAutoUpgrade",
@@ -219,4 +219,5 @@
         }
     ]
 }
+
 
